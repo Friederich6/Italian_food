@@ -36,7 +36,7 @@ function creaProdotto(prodotto)
         "                            </div>\n" +
         "                            <!-- Product actions-->\n" +
         "                            <div class=\"card-footer p-4 pt-0 border-top-0 bg-transparent\">\n" +
-        "                                <div class=\"text-center\"><a class=\"btn btn-outline-dark mt-auto\" href=\"#\">Aggiungi</a></div>\n" +
+        "                                <div class=\"text-center\"><a onclick=aggiungiNelCarrello("+'"'+prodotto.nomeProdotto+'"'+")"+"  class=\"btn btn-outline-dark mt-auto\">Aggiungi</a></div>\n" +
         "                            </div>\n" +
         "                        </div>\n" +
         "                    </div>";
