@@ -35,7 +35,7 @@
             </div>
         </a>
         <a class="list-group-item" id="nuovaRicetta" href="/nuova-ricetta"><i class="fe-icon-user text-muted"></i>Nuova ricetta</a>
-        <a class="list-group-item" href="#"><i class="fe-icon-map-pin text-muted"></i>Raccolte</a>
+
         <a class="list-group-item" href="/logout">
             <div class="d-flex justify-content-between align-items-center">
                 <div><i class="fe-icon-heart mr-1 text-muted"></i>
