@@ -5,22 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Shop Homepage - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../../../../../../startbootstrap-shop-homepage-gh-pages/assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/shop.css" rel="stylesheet" />
+        <title>Italian Food</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
         <jsp:include page="menuBar.jsp"/>
     </head>
-    <body onload=caricaProdotti()>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <body style="background-color: white" onload=caricaProdotti()>
         <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
+        <header class=" py-5" style="background-color: red">
+            <div class="container px-4 px-lg-5 my-5" >
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Negozio ingredienti</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Compra gli ingredienti per comporre le tue ricette!</p>
+                    <p class="lead fw-normal text-white-50 mb-0" style="color: white">Compra gli ingredienti per comporre le tue ricette!</p>
                 </div>
             </div>
         </header>

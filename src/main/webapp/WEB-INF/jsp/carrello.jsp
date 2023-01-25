@@ -13,14 +13,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <jsp:include page="menuBar.jsp"/>
 </head>
-<body>
+<body style="background-color: white">
 <link rel="stylesheet" href="css/style.css" type="text/css"/>
 
     <div class="carrello_conteiner" >
-        <div class="left_carrello" >
+        <div class="left_carrello" style="color:#8c8c8c;border:solid">
         </div>
-        <div id="right_carrello" class="z-coast-cart__cart__cart-tiles__container z-coast-cart__cart__cart-tiles__container__second-container z-coast-cart__cart__cart-tiles__spacing  z-coast-cart__cart__sticky"><div>
-            <div>
+        <div id="right_carrello" style="color:#8c8c8c;border:solid" class="z-coast-cart__cart__cart-tiles__container z-coast-cart__cart__cart-tiles__container__second-container z-coast-cart__cart__cart-tiles__spacing  z-coast-cart__cart__sticky"><div>
+            <div style="color:black;">
                 <div class="z-coast-base__tile z-coast-base__tile--white">
                     <div class="z-coast-base__totals-tile-notification">
                         <div class="z-coast-base__collapsible z-coast-base__collapsible--collapsed">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="z-coast-base__tile-title" data-id="tile-title">
+                    <div class="z-coast-base__tile-title " data-id="tile-title">
                         <h2 class="z-2-text z-coast-base__tile-title_text z-2-text-title-4 z-2-text-black">Totale</h2>
                     </div>
                     <div class="z-coast-base__totals-tile">

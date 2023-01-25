@@ -14,22 +14,25 @@
 <script type="text/javascript" src="js/RicercaRicette.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="resize: inline" >
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Toggle button -->
     <div class="dropdown">
-      <button class="navbar-toggler" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="navbar-toggler" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="image/menuTendina.png" height="20">
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
         <a class="dropdown-item" href="/">Home</a>
         <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/userSettings">Impostazioni</a> </c:if>
         <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Impostazioni</a> </c:if>
-        <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/carrello">Carrello</a> </c:if>
-        <a class="dropdown-item" href="/ricerca">Raccolte</a>
         <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/nuova-ricetta">Crea ricetta</a> </c:if>
         <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Crea ricetta</a> </c:if>
+        <c:if test="${utente.admin==true}"> <a class="dropdown-item" href="/aggiungiProdotto">Aggiungi prodotti</a> </c:if>
+        <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/shop">Negozio</a> </c:if>
+        <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Negozio</a> </c:if>
+        <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/carrello">Carrello</a> </c:if>
+        <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Carrello</a> </c:if>
         <c:if test="${utente!=null}"><a class="dropdown-item" href="/logout">Logout</a></c:if>
       </div>
     </div>
@@ -52,14 +55,18 @@
           <c:if test="${utente.nome==null}"> <a class="nav-link" href="/login">Impostazioni</a> </c:if>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/carrello">Carrello</a>
-        </li>
-        <li class="nav-item">
           <c:if test="${utente.nome!=null}"> <a class="nav-link" href="/nuova-ricetta">Crea ricetta</a> </c:if>
           <c:if test="${utente.nome==null}"> <a class="nav-link" href="/login">Crea ricetta</a> </c:if>
+        </li>
+        <li class="nav-item">
           <c:if test="${utente.admin==true}"> <a class="nav-link" href="/aggiungiProdotto">Aggiungi prodotti</a> </c:if>
+        </li>
+        <li class="nav-item">
           <c:if test="${utente.nome!=null}"> <a class="nav-link" href="/shop">Negozio</a> </c:if>
           <c:if test="${utente.nome==null}"> <a class="nav-link" href="/login">Negozio</a> </c:if>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/carrello">Carrello</a>
         </li>
         <li class="nav-item">
           <c:if test="${utente!=null}"><a class="nav-link" href="/logout">Logout</a></c:if>
@@ -76,7 +83,7 @@
         <i class="fas fa-shopping-cart"></i>
       </a>
 
-      <div class="input-group" style="margin-right: 200px">
+      <div class="input-group padding_ricerca" >
         <input id="parolaDaCercare" type="search" class="form-control rounded" placeholder="Cerca" aria-label="search" aria-describedby="search-addon"/>
           <button id="cerca" onclick="ricerca()" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Cerca</button>
 
@@ -90,7 +97,7 @@
 
       <div>
         <c:if test="${utente.nome!=null}"><a href=/userSettings id="navbarDropdownMenuAvatar" role="button"> <img src="image/profilo.png" height="40" alt="profilo" loading="lazy"/>  </c:if>
-        <c:if test="${utente.nome==null}"><a href=/login id="navbarDropdownMenuAvatar" role="button"> LOGIN <img src="image/profilo.png" height="40" alt="profilo" loading="lazy"/></c:if>
+        <c:if test="${utente.nome==null}"><a href=/login id="navbarDropdownMenuAvatar" role="button" style="display: inline-flex;align-items: center"> LOGIN <img src="image/profilo.png" height="40" alt="profilo" loading="lazy" style="margin-left: 10px;"/></c:if>
         </a>
       </div>
 
