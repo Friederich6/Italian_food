@@ -1,10 +1,7 @@
 package informatica.unical.it.italianfood.persistance.jdbc;
 
 
-import informatica.unical.it.italianfood.persistance.Database;
-import informatica.unical.it.italianfood.persistance.ProdottoDao;
-import informatica.unical.it.italianfood.persistance.RicettaDao;
-import informatica.unical.it.italianfood.persistance.UtenteDao;
+import informatica.unical.it.italianfood.persistance.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -63,5 +60,11 @@ public class DatabaseJDBC implements Database
     public ProdottoDao getProdottoDao()
     {
         return new ProdottoDaoJDBC(connection);
+    }
+
+    @Override
+    public CarrelloDao getCarrelloDao()
+    {
+        return new CarrelloDaoJDBC(connection);
     }
 }

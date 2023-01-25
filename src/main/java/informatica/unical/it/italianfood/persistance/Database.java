@@ -12,4 +12,5 @@ public interface Database
     public RicettaDao getRicettaDao();
 
     public ProdottoDao getProdottoDao();
+    public CarrelloDao getCarrelloDao();
 }
