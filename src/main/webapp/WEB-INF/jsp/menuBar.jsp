@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +29,7 @@
         <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Impostazioni</a> </c:if>
         <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/nuova-ricetta">Crea ricetta</a> </c:if>
         <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Crea ricetta</a> </c:if>
-        <c:if test="${utente.admin==true}"> <a class="dropdown-item" href="/aggiungiProdotto">Aggiungi prodotti</a> </c:if>
+        <c:if test="${utente.admin==true}"> <a class="dropdown-item" href="/aggiungiProdotto">Aggiungi prodotto</a> </c:if>
         <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/shop">Negozio</a> </c:if>
         <c:if test="${utente.nome==null}"> <a class="dropdown-item" href="/login">Negozio</a> </c:if>
         <c:if test="${utente.nome!=null}"> <a class="dropdown-item" href="/carrello">Carrello</a> </c:if>
@@ -59,7 +60,7 @@
           <c:if test="${utente.nome==null}"> <a class="nav-link" href="/login">Crea ricetta</a> </c:if>
         </li>
         <li class="nav-item">
-          <c:if test="${utente.admin==true}"> <a class="nav-link" href="/aggiungiProdotto">Aggiungi prodotti</a> </c:if>
+          <c:if test="${utente.admin==true}"> <a class="nav-link" href="/aggiungiProdotto">Aggiungi prodotto</a> </c:if>
         </li>
         <li class="nav-item">
           <c:if test="${utente.nome!=null}"> <a class="nav-link" href="/shop">Negozio</a> </c:if>

@@ -27,7 +27,7 @@
 <div class="contenitore" style="margin-right: 0; margin-left: 0;">
     <div class="logo-descrizione">
         <div class="logo" style="display: block; text-align: center;">
-            <img src="image/" alt="logo" style="width:200px;height:200px;">
+            <img src="image/iconaProgetto.jpg" alt="logo" style="width:200px;height:200px;">
         </div>
         <div class="descrizione" style="font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;">
             <h2 style="text-align: center">Ti piace cucinare? Sei nel posto giusto.... <br> Scopri con noi tantissime nuove ricette, e carica quelle da te create!</h2>

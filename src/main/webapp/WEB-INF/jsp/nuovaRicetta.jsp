@@ -19,14 +19,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
 <script type="text/javascript" src="js/nuovaRicetta.js" > </script>
 
-<div class="container mt-5">
-    <div class="row">
+<div class="container mt-5" >
+    <div class="row" >
         <div class="col-lg-4 pb-5">
             <!-- Account Sidebar-->
             <jsp:include page="userMenu.jsp"/>
         </div>
         <!-- Nuova ricetta-->
-        <div class="d-flex flex-column">
+        <div class="col-lg-8 pb-5">
             <form>
                 <div>
                     <input type="text" id="emailRicetta" hidden class="form-control" placeholder=${utente.email}>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <div class="btn btn-primary btn-rounded">
+                        <div class="btn btn-primary btn-rounded" style="margin-top: 20px">
                             <label class="form-label text-white m-1" for="inviaRicetta">Invia la ricetta</label>
                             <input type="button" class="form-control d-none" id="inviaRicetta" />
                         </div>
