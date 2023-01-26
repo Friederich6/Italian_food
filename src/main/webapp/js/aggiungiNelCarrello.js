@@ -1,5 +1,6 @@
 function aggiungiNelCarrello(nomeProdotto)
 {
+    console.log(nomeProdotto);
     $.ajax(
         {
             type:"POST",
@@ -8,7 +9,7 @@ function aggiungiNelCarrello(nomeProdotto)
             data: JSON.stringify(nomeProdotto),
             success: function()
             {
-
+                alert("Prodotto correttamente aggiunto nel carrello!");
             }
         })
 }

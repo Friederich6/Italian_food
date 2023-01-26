@@ -68,7 +68,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: net.minidev:json-smart:2.4.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.minidev:accessors-smart:2.4.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.ow2.asm:asm:9.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.21.0" level="project" />
@@ -111,5 +110,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.14" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.13" level="project" />
+    <orderEntry type="library" name="Maven: com.paypal.sdk:rest-api-sdk:1.14.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
   </component>
 </module>

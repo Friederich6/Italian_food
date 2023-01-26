@@ -11,80 +11,67 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/carrello.js" > </script>
     <jsp:include page="menuBar.jsp"/>
 </head>
-<body style="background-color: white">
-<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<body onload=caricaCarrello() style="background-color: white">
+<link rel="stylesheet" href="css/carrello.css" type="text/css"/>
 
-    <div class="carrello_conteiner" >
-        <div class="left_carrello" style="color:#8c8c8c;border:solid">
-        </div>
-        <div id="right_carrello" style="color:#8c8c8c;border:solid" class="z-coast-cart__cart__cart-tiles__container z-coast-cart__cart__cart-tiles__container__second-container z-coast-cart__cart__cart-tiles__spacing  z-coast-cart__cart__sticky"><div>
-            <div style="color:black;">
-                <div class="z-coast-base__tile z-coast-base__tile--white">
-                    <div class="z-coast-base__totals-tile-notification">
-                        <div class="z-coast-base__collapsible z-coast-base__collapsible--collapsed">
-                            <div class="z-1-notification z-coast-base__totals-tile-notification__notification z-1-notification--global z-1-notification--info">
-                                <span class="z-1-notification__icon">
-                                    <span class="z-1-icon z-1-icon-ic_info_lrg z-1-icon-small z-1-icon-inherit z-1-notification__icon-comp">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" class="z-1-icon_svg">
-                                            <use xlink:href="#icon_svg-ic_info_lrg"></use>
-                                        </svg>
-                                    </span>
-                                </span>
-                                <span class="z-1-text z-1-notification__content z-1-text-detail-text-regular z-1-text-black">
-                                </span>
+<section class="h-100 h-custom" style="background-color:#FF0000;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div id="articolo_qui" class="d-flex justify-content-between align-items-center mb-5">
+                                        <h1 class="fw-bold mb-0 text-black">Carrello</h1>
+                                        <h6 class="mb-0 text-muted"></h6>
+                                    </div>
+
+                                    <div class="pt-5">
+                                        <h6 class="mb-0"><a href="#!" class="text-body"><i
+                                                class="fas fa-long-arrow-alt-left me-2"></i>Home</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 bg-grey">
+                                <div class="p-5">
+                                    <h3 class="fw-bold mb-5 mt-2 pt-1">Riepilogo</h3>
+                                    <hr class="my-4">
+
+
+
+                                    <h5 class="text-uppercase mb-3">Indirizzo di consegna</h5>
+
+                                    <div class="mb-4 pb-2">
+                                        <select class="select">
+                                            <option value="1">Standard-Delivery- €5.00</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Four</option>
+                                        </select>
+                                    </div>
+
+
+                                    <hr class="my-4">
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <h5 class="text-uppercase">Prezzo totale</h5>
+                                        <h5>€ 137.00</h5>
+                                    </div>
+                                    <button type="button" class="btn btn-dark btn-block btn-lg"
+                                            data-mdb-ripple-color="dark">Acquista</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="z-coast-base__tile-title " data-id="tile-title">
-                        <h2 class="z-2-text z-coast-base__tile-title_text z-2-text-title-4 z-2-text-black">Totale</h2>
-                    </div>
-                    <div class="z-coast-base__totals-tile">
-                        <div class="z-coast-base__totals">
-                            <dl>
-                                <z-grid spacing="gutter">
-                                    <z-grid-item span-xs="8" class="z-coast-base__totals__cell">
-                                        <dt class="z-2-text z-2-text-body z-2-text-black">Subtotale</dt>
-                                    </z-grid-item>
-                                    <z-grid-item span-xs="4" class="z-coast-base__totals__cell z-coast-base__totals__cell--text-right">
-                                        <dd class="z-2-text z-2-text-body z-2-text-black">0,00&nbsp;€</dd>
-                                    </z-grid-item>
-                                </z-grid>
-                            </dl>
-                            <dl>
-                                <z-grid spacing="gutter">
-                                    <z-grid-item span-xs="8" class="z-coast-base__totals__cell">
-                                        <dt class="z-2-text z-2-text-body z-2-text-black">Spedizione</dt>
-                                    </z-grid-item>
-                                    <z-grid-item span-xs="4" class="z-coast-base__totals__cell z-coast-base__totals__cell--text-right">
-                                        <dd class="z-2-text z-2-text-body z-2-text-black">0,00&nbsp;€</dd>
-                                    </z-grid-item>
-                                </z-grid>
-                            </dl>
-                            <dl>
-                                <z-grid spacing="gutter">
-                                    <z-grid-item span-xs="8" class="z-coast-base__totals__cell z-coast-base__totals__cell--with-top-line">
-                                        <dt class="z-2-text z-coast-base__totals__total-price-text z-2-text-body z-2-text-black">Totale (IVA inclusa)</dt>
-                                    </z-grid-item>
-                                    <z-grid-item span-xs="4" class="z-coast-base__totals__cell z-coast-base__totals__cell--with-top-line z-coast-base__totals__cell--text-right">
-                                        <dd class="z-2-text z-2-text-body z-2-text-black">
-                                            <span class="z-2-text z-coast-base__totals__total-price-value z-coast-base__totals__total-price-text z-2-text-body z-2-text-black">0,00&nbsp;€</span>
-                                        </dd>
-                                    </z-grid-item>
-                                </z-grid>
-                            </dl>
-                        </div>
-                        <button style="border-radius: 5px" class="z-1-button z-coast-base-primary-accessible z-coast-base__totals-tile__button-checkout z-1-button--primary z-1-button--button" name="" type="button">
-                            <div class="z-1-button__content">Acquista</div>
-                        </button>
-                    </div>
                 </div>
-
             </div>
         </div>
     </div>
-</div>
+</section>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
