@@ -46,6 +46,10 @@ function inviaRicetta()
             type:"POST",
             url:"/inviaRicetta",
             contentType: "application/json",
-            data: JSON.stringify(ricetta)
+            data: JSON.stringify(ricetta),
+            success:function ()
+            {
+                alert("La ricetta è stata creata con successo!");
+            }
         })
 }

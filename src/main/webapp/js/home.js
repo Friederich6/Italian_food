@@ -29,3 +29,37 @@ function showSlides(n, no)
     x[slideIndex[no]-1].style.display = "block";
 }
 
+function loadRecipes()
+{
+    $.ajax(
+        {
+            type:"POST",
+            url:"/effettuaRicerca",
+            contentType: "application/json",
+            data: JSON.stringify(""),
+            success: function(ricette)
+            {
+                var index=0;
+                while (index++!==ricette.length)
+                {
+                    if(ricette[index].categoria==="Antipasto")
+                    {
+                        $("#antipasto").append(creaRic(ricette[index]));
+                    }
+                }
+            }
+        })
+}
+
+function creaRic(ricetta)
+{
+    var doc=document.createElement("div");
+    doc.innerHTML="<div class=\"card\">\n" +
+        "                    <img src=\"image/antipasto4.jpg\" class=\"card-img-top\" alt=\"...\">\n" +
+        "                    <div class=\"card-body\">\n" +
+        "                        <h5 class=\"card-title\">Card title</h5>\n" +
+        "                        <p class=\"card-text\">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>\n" +
+        "                    </div>";
+    return doc;
+}
+

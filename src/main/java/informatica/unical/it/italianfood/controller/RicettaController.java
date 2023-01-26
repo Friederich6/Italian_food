@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @RestController
 public class RicettaController
@@ -19,5 +20,25 @@ public class RicettaController
        Ricetta ricetta=DatabaseJDBC.getInstance().getRicettaDao().cercaEPrelevaRicetteById(id);
        res.setStatus(HttpServletResponse.SC_OK);
        return ricetta;
+    }
+
+    @PostMapping("/effettuaRicerca")
+    public ArrayList<Ricetta> ricerca(HttpServletResponse res, @RequestBody String parola) throws SQLException
+    {
+        parola = parola.replaceAll("\"", "");
+        ArrayList<Ricetta> ricette = DatabaseJDBC.getInstance().getRicettaDao().cercaEPrelevaRicette(parola);
+
+        res.setStatus(HttpServletResponse.SC_OK);
+        return ricette;
+    }
+
+    @PostMapping("/inviaRicetta")
+    public void inviaRicetta(HttpServletResponse res, @RequestBody Ricetta ricetta) throws SQLException
+    {
+        if(DatabaseJDBC.getInstance().getRicettaDao().inserisciRicetta(ricetta))
+            res.setStatus(HttpServletResponse.SC_OK);
+        else
+            res.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+
     }
 }

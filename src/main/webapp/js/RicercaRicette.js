@@ -8,16 +8,11 @@
                     url:"/effettuaRicerca",
                     contentType: "application/json",
                     data: JSON.stringify(parola),
-                    error:function(ricette)
-                    {
-                        console.log(ricette);
-                    },
                     success:function(ricette)
                     {
                         var index=0;
                         while(index!==ricette.length)
                         {
-                            console.log(index);
                             $("#modal").after(creaRicetta(ricette[index++]));
                         }
                     }
@@ -29,7 +24,7 @@ function creaRicetta(ricetta)
     var section=document.createElement("section");
 
     section.innerHTML="<section style='background-color: #F8F9FA;margin-top: 10px' class=\"search-result-item\">\n" +
-        "            <a class=\"image-link\" href=\"#\"><img class=\"image\" src=\"image/pizza.jpg\">\n" +
+        "            <a class=\"image-link\" href=\"#\"><img class=\"image\" src=\"image/dummy.jpg\">\n" +
         "            </a>\n" +
         "            <div  class=\"search-result-item-body\">\n" +
         "                <div class=\"row\">\n" +
