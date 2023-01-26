@@ -59,7 +59,7 @@
                                     <hr class="my-4">
                                     <div class="d-flex justify-content-between mb-5">
                                         <h5 class="text-uppercase">Prezzo totale</h5>
-                                        <h5>€ 137.00</h5>
+                                        <h5 id="totale"></h5>
                                     </div>
                                     <button type="button" class="btn btn-dark btn-block btn-lg"
                                             data-mdb-ripple-color="dark">Acquista</button>

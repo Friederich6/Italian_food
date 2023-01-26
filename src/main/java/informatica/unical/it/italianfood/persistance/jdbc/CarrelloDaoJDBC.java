@@ -34,13 +34,11 @@ public class CarrelloDaoJDBC implements CarrelloDao
         {
             int q=r.getInt("quantita");
             ++q;
-            double pr=r.getDouble("prezzo");
-            pr*=q;
-            p=connection.prepareStatement("UPDATE carrello SET quantita=?, prezzo=? WHERE emailutente=? AND nomeprodotto=?");
+
+            p=connection.prepareStatement("UPDATE carrello SET quantita=? WHERE emailutente=? AND nomeprodotto=?");
             p.setInt(1,q);
-            p.setDouble(2,pr);
-            p.setString(3,email);
-            p.setString(4,nomeProdotto);
+            p.setString(2,email);
+            p.setString(3,nomeProdotto);
             p.executeUpdate();
             return true;
         }
@@ -64,10 +62,9 @@ public class CarrelloDaoJDBC implements CarrelloDao
 
         ArrayList<Carrello> contenuto=new ArrayList<>();
 
-        if(!r.next())
-            return null;
+        while(r.next())
+            contenuto.add(new Carrello(r.getString("nomeprodotto"),r.getInt("quantita"),r.getDouble("prezzo")));
 
-        contenuto.add(new Carrello(r.getString("nomeprodotto"),r.getInt("quantita"),r.getDouble("prezzo")));
         return contenuto;
 
     }

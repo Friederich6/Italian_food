@@ -27,13 +27,10 @@ public class GoogleRegController
             HttpSession session = req.getSession(true);
             session.setAttribute("utente", utente);
             res.setStatus(HttpServletResponse.SC_OK);
-
         }
         else
-        {
-            System.out.println(1);
             res.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
-        }
+
     }
 
     @PostMapping("/registerGoogleUser")
