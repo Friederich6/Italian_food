@@ -12,8 +12,9 @@
 
 </head>
 <body>
-<form action="/">
-    <input type="submit" value="Torna Indietro" style="margin-right: 20px" >
+
+<form>
+    <input class="left_arrow" type="button"  onclick="history.back()" style="margin-top: 20px;margin-left: 20px">
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

@@ -10,6 +10,7 @@ public class Utente implements java.io.Serializable{
     private boolean bannato = false;
     private String google_id;
 
+
     public Utente()
     {}
 

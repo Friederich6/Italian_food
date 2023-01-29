@@ -517,3 +517,11 @@ body{
 .padding_ricerca {
     padding-right: 60px;
 }
+
+.left_arrow{
+    background-image: url("../image/left_arrow.png");
+    height: 50px;
+    width: 60px;
+    border-radius: 30px;
+    margin-right: 20px
+}

@@ -16,6 +16,8 @@
 </head>
 <body onload=caricaCarrello() style="background-color: white">
 <link rel="stylesheet" href="css/carrello.css" type="text/css"/>
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
 
 <section class="h-100 h-custom" style="background-color:#FF0000;">
     <div class="container py-5 h-100">

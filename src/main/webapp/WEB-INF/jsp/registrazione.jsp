@@ -27,7 +27,7 @@
                     <div class="card-body p-md-5">
                         <div class="row justify-content-center">
                             <form>
-                                <input type="button" value="Torna Indietro" onclick="history.back()" style="margin-right: 20px" >
+                                <input class="left_arrow" type="button"  onclick="history.back()" >
                             </form>
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
@@ -85,6 +85,7 @@
                                         <div class="invalid-feedback">Please fill out this field.</div>
 
                                     </div>
+
                                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                         <button type="button" id="registerbtn" class="btn btn-primary btn-lg">Registrati</button>
                                     </div>

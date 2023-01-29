@@ -3,19 +3,18 @@ window.addEventListener("load", function ()
     document.getElementById("login").addEventListener("click", accedi);
 });
 
-function accedi(){
+function accedi() {
     var email = document.querySelector("#email").value;
     var password = document.querySelector("#pass").value;
-    if((email==="") || (password==="") || (email===" ") || (password===" "))
-    {
+    if ((email == "") || (password == "") || (email == " ") || (password == " ")) {
         error("Attenzione! Compila tutti i campi");
-        return;
+    } else{
+        $.ajax(
+            {
+                url: "/doLogin",
+                error: error("Controlla che i dati siano corretti!")
+            })
     }
-    $.ajax(
-        {
-            url:"/doLogin",
-            error:error("Controlla che i dati siano corretti!")
-        })
 }
 
 function error(s){
