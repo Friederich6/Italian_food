@@ -27,7 +27,7 @@
                     <div class="card-body p-md-5">
                         <div class="row justify-content-center">
                             <form>
-                                <input class="left_arrow" type="button"  onclick="history.back()" >
+                                <a class="left_arrow" type="button"  href="/login" > </a>
                             </form>
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 

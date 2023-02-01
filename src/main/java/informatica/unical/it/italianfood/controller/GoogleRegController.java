@@ -42,6 +42,7 @@ public class GoogleRegController
             session.setAttribute("utente", utente);
             res.setStatus(HttpServletResponse.SC_OK);
             res.sendRedirect("/");
+
         }
         else
             res.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);

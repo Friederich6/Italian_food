@@ -4,14 +4,13 @@ window.addEventListener("load", function ()
 
 });
 
-function Utente(email,password,nome,cognome,google_id,genere)
+function Utente(email,password,nome,cognome,google_id)
 {
     this.email = email;
     this.password =password;
     this.nome = nome;
     this.cognome = cognome;
     this.google_id=google_id;
-    this.genere=genere;
 }
 
 
@@ -21,7 +20,6 @@ function iscriviUtente() {
     var nome = document.querySelector("#nome").value;
     var cognome = document.querySelector("#cognome").value;
     var confirm_password = document.querySelector("#confirm_password").value;
-
 
 
     if(nome=="" || cognome=="" || email=="" || password=="" || confirm_password=="") {
@@ -154,6 +152,9 @@ function googleReg(response)
             url: "/checkExistsId",
             data: id,
             contentType:"application/json",
+            success:function () {
+                window.location.href = "/"
+            },
             error:function ()
             {
                 $.ajax(
@@ -161,7 +162,10 @@ function googleReg(response)
                         type: "POST",
                         url:"/registerGoogleUser",
                         contentType:"application/json",
-                        data: JSON.stringify(utente)
+                        data: JSON.stringify(utente),
+                        success:function () {
+                            window.location.href = "/"
+                        },
                     })
             }
         });

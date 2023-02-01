@@ -12,8 +12,35 @@ function accedi() {
         $.ajax(
             {
                 url: "/doLogin",
-                error: error("Controlla che i dati siano corretti!")
-            })
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(email,password),
+                success: function () {
+                    var messageContainer = document.createElement("div");
+                    messageContainer.id = "message_container";
+                    messageContainer.className = "alert alert-primary d-flex align-items-center mb-3";
+                    $(messageContainer).attr("role", "alert");
+
+                    var icon = document.createElement("i");
+                    icon.className = "bi bi-info-circle-fill me-2";
+                    $(icon).attr("role", "img");
+
+                    var message = document.createElement("div");
+                    message.id = "message";
+                    $(message).text("Login effettuato")
+                    messageContainer.append(icon, message);
+
+                    $("#login_form").before(messageContainer);
+
+                    setTimeout(function () {
+                        $("#message_container").fadeOut();
+                    }, 2000);
+                    setTimeout(function () {
+                        $("#message_container").remove();
+                    }, 2300);
+                },
+                error: error("Controlla che i dati siano corretti!"),
+            });
     }
 }
 

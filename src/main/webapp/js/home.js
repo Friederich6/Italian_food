@@ -5,13 +5,18 @@ $('#toggle-search').on('click', function() {
     $('#searchBar').toggle('display: inline-block');
 });
 
-let slideIndex = [1,1,1,1,1];
-let slideId = ["antipasti","primi","secondi","contorni","dolci"]
+let slideIndex = [1,1,1,1,1,1,1,1,1,1];
+let slideId = ["antipasti","primi","secondi","contorni","dolci","antipastiS","primiS","secondiS","contorniS","dolciS"]
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
 showSlides(1, 3);
 showSlides(1, 4);
+showSlides(1, 5);
+showSlides(1, 6);
+showSlides(1, 7);
+showSlides(1, 8);
+showSlides(1, 9);
 
 function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);

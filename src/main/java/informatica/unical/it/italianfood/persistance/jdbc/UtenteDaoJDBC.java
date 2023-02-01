@@ -15,6 +15,22 @@ public class UtenteDaoJDBC implements UtenteDao
     Connection connection;
     public UtenteDaoJDBC(Connection connection){this.connection=connection;}
 
+    @Override
+    public boolean Update(Utente utente) throws SQLException
+    {
+        if(connection==null || connection.isClosed())
+            return false;
+
+        PreparedStatement p=connection.prepareStatement("INSERT INTO utente VALUES(?,?,?,?,?);");
+        p.setString(1,utente.getEmail());
+        p.setString(2,BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(12)));
+        p.setString(3, utente.getNome());
+        p.setString(4,utente.getCognome());
+        p.setString(5,utente.getGoogle_id());
+        p.executeUpdate();
+        return true;
+    }
+
 
     @Override
     public boolean Register(Utente utente) throws SQLException
