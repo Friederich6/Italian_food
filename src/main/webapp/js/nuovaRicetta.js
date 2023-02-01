@@ -3,7 +3,7 @@ window.addEventListener("load", function ()
     document.getElementById("inviaRicetta").addEventListener("click", inviaRicetta);
 });
 
-function Ricetta(id,emailUtente,nomeRicetta,descrizioneRicetta,preparazioneRicetta,ingredientiRicetta,dataPubblicazione,categoria,segnalata,thumbnail,difficolta)
+function Ricetta(id,emailUtente,nomeRicetta,descrizioneRicetta,preparazioneRicetta,ingredientiRicetta,dataPubblicazione,categoria,segnalata,thumbnail,difficolta,calorie)
 {
     this.id=id;
     this.emailUtente=emailUtente;
@@ -16,6 +16,7 @@ function Ricetta(id,emailUtente,nomeRicetta,descrizioneRicetta,preparazioneRicet
     this.segnalata=segnalata;
     this.thumbnail=thumbnail;
     this.difficolta=difficolta;
+    this.calorie=calorie;
 }
 
 function inviaRicetta()
@@ -38,8 +39,8 @@ function inviaRicetta()
     var ingredienti=$("#ingredientiRicetta").val();
     var tipoPortata = tipoPortataCombo.options[tipoPortataCombo.selectedIndex].text;
     var difficolta = difficoltaCombo.options[difficoltaCombo.selectedIndex].text;
-
-    var ricetta=new Ricetta(null,emailUtente,nomeRicetta,descrizione,preparazione,ingredienti,data,tipoPortata,false,null,difficolta);
+    var calorie=document.getElementById("calorie").value;
+    var ricetta=new Ricetta(null,emailUtente,nomeRicetta,descrizione,preparazione,ingredienti,data,tipoPortata,false,null,difficolta,calorie);
 
     $.ajax(
         {

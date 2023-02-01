@@ -26,62 +26,73 @@
         </div>
         <!-- Profile Settings-->
         <div class="col-lg-8 pb-5">
-            <form class="row" id="update_form">
+            <form class="row" id="update_form" method="post" action="doUpdate">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="account-fn">Nome</label>
-                        <c:if test="${utente.nome!=null}">
-                            <input class="form-control" type="text" id="account-fn" placeholder=${utente.nome} required="">
-                        </c:if>
-                        <c:if test="${utente.nome==null}">
-                            <input class="form-control" type="text" id="account-fn" placeholder="Nome" required="">
-                        </c:if>
+                        <label for="nome">Nome</label>
+                            <input name="nome" class="form-control" type="text" id="nome" placeholder=${utente.nome}>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="account-ln">Cognome</label>
-                        <c:if test="${utente.cognome!=null}">
-                        <input class="form-control" type="text" id="account-ln" placeholder="${utente.cognome}" required="">
-                        </c:if>
-                        <c:if test="${utente.cognome==null}">
-                            <input class="form-control" type="text" id="account-fn" placeholder="Cognome" required="">
-                        </c:if>
+                        <label for="cognome">Cognome</label>
+                        <input name="cognome" class="form-control" type="text" id="cognome" placeholder="${utente.cognome}">
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="account-email">Nuova E-mail</label>
-                        <c:if test="${utente.email!=null}">
-                        <input class="form-control" type="email" id="account-email" placeholder="${utente.email}" required="">
-                        </c:if>
-                        <c:if test="${utente.email==null}">
-                        <input class="form-control" type="text" id="account-fn" placeholder="Email" required="">
-                        </c:if>
+                <c:if test="${utente.google_id==null}">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nuovaPassword">Nuova Password</label>
+                            <input name="nuovaPassword" class="form-control" type="password" id="nuovaPassword">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="account-pass">Nuova Password</label>
-                        <input class="form-control" type="password" id="account-pass">
+                </c:if>
+
+                <c:if test="${utente.google_id!=null}">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nuovaPassword">Nuova Password</label>
+                            <input disabled name="nuovaPassword" class="form-control" placeholder="Password Google" type="password" id="nuovaPassword">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="account-confirm-pass">Conferma Password</label>
-                        <input class="form-control" type="password" id="account-confirm-pass">
+                </c:if>
+
+                <c:if test="${utente.google_id==null}">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="confermaPassword">Conferma Password</label>
+                            <input name="confermaPassword" class="form-control" type="password" id="confermaPassword">
+                        </div>
                     </div>
-                </div>
+                </c:if>
+
+                <c:if test="${utente.google_id!=null}">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="confermaPassword">Conferma Password</label>
+                            <input disabled name="confermaPassword" class="form-control" type="password" id="confermaPassword">
+                        </div>
+                    </div>
+                </c:if>
                 <div class="col-12">
                     <hr class="mt-2 mb-3">
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <button class="btn btn-style-1 btn-primary" type="button" id="updateProfilo" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
+                        <button class="btn btn-style-1 btn-primary" type="submit" id="updateProfilo" data-toast="" data-toast-position="topRight">Aggiorna Profilo</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script>
+    document.getElementById("updateProfilo").addEventListener("click",function ()
+    {
+        var psw=$("#nuovaPassword").val();
+        var cnfpsw=$("#confermaPassword").val();
+        if(psw!==cnfpsw)
+            alert("Attenzione! Le due password non coincidono.");
+    })
+</script>
 </body>
 <footer>
     <jsp:include page="footer.jsp"/>

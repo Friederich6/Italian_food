@@ -68,4 +68,35 @@ public class CarrelloDaoJDBC implements CarrelloDao
         return contenuto;
 
     }
+
+    @Override
+    public void svuotaCarrello(String emailUtente) throws SQLException
+    {
+        PreparedStatement p=connection.prepareStatement("SELECT* FROM carrello WHERE emailUtente=?");
+        p.setString(1,emailUtente);
+        ResultSet r=p.executeQuery();
+        while(r.next())
+        {
+            PreparedStatement p1=connection.prepareStatement("SELECT* FROM prodotto where nome=?");
+            p1.setString(1,r.getString("nomeprodotto"));
+            ResultSet r1=p1.executeQuery();
+            r1.next();
+            PreparedStatement p2=connection.prepareStatement("UPDATE prodotto SET disponibilità=? where nome=?");
+            p2.setInt(1,r1.getInt("disponibilità")-r.getInt("quantita"));
+            p2.setString(2,r.getString("nomeprodotto"));
+            p2.executeUpdate();
+        }
+        p=connection.prepareStatement("DELETE FROM carrello where emailUtente=?");
+        p.setString(1,emailUtente);
+        p.executeUpdate();
+    }
+
+    @Override
+    public void eliminaArticolo(String nomeProdotto, String emailUtente) throws SQLException
+    {
+        PreparedStatement p=connection.prepareStatement("DELETE FROM carrello WHERE emailUtente=? AND nomeprodotto=?");
+        p.setString(1,emailUtente);
+        p.setString(2,nomeProdotto);
+        p.executeUpdate();
+    }
 }

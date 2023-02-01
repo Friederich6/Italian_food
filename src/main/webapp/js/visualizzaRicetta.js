@@ -17,6 +17,7 @@ function visualizzaRicetta()
                 document.getElementById("preparazioneRicetta").innerText=ricetta.preparazioneRicetta;
                 document.getElementById("categoria").innerText="Categoria:"+ricetta.categoria;
                 document.getElementById("difficolta").innerText="Difficoltà:"+ricetta.difficolta;
+                document.getElementById("calorie").innerText="Calorie:"+ricetta.calorie;
             }
         })
 }

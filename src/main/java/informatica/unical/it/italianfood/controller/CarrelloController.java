@@ -39,4 +39,19 @@ public class CarrelloController
 
         return contenuto;
     }
+
+    @PostMapping("/svuotaCarrello")
+    public void svuotaCarrello(HttpServletRequest req) throws SQLException
+    {
+        Utente u=(Utente)req.getSession().getAttribute("utente");
+        DatabaseJDBC.getInstance().getCarrelloDao().svuotaCarrello(u.getEmail());
+    }
+
+    @PostMapping("/eliminaArticolo")
+    public void eliminaArticolo(HttpServletRequest req,@RequestBody String nomeProdotto) throws SQLException
+    {
+        nomeProdotto=nomeProdotto.replaceAll("\"","");
+        Utente u=(Utente)req.getSession().getAttribute("utente");
+        DatabaseJDBC.getInstance().getCarrelloDao().eliminaArticolo(nomeProdotto,u.getEmail());
+    }
 }

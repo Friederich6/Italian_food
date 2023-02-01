@@ -13,8 +13,9 @@ public class Ricetta implements java.io.Serializable
     private boolean segnalata=false;
     private byte[] thumbnail=null;
     private String difficolta="";
+    private int calorie=0;
 
-    public Ricetta(int id,String emailUtente,String nomeRicetta,String descrizioneRicetta,String preparazioneRicetta,String dataPubblicazione,String categoria,boolean segnalata,byte[]thumbnail,String difficolta,String ingredientiRicetta)
+    public Ricetta(int id,String emailUtente,String nomeRicetta,String descrizioneRicetta,String preparazioneRicetta,String dataPubblicazione,String categoria,boolean segnalata,byte[]thumbnail,String difficolta,String ingredientiRicetta,int calorie)
     {
         this.id=id;
         this.emailUtente=emailUtente;
@@ -27,6 +28,7 @@ public class Ricetta implements java.io.Serializable
         this.thumbnail=thumbnail;
         this.difficolta=difficolta;
         this.ingredientiRicetta=ingredientiRicetta;
+        this.calorie=calorie;
     }
 
     public int getId()
@@ -113,6 +115,7 @@ public class Ricetta implements java.io.Serializable
     {
         return difficolta;
     }
+    public int getCalorie(){return calorie;}
     public void setDifficolta(String difficolta)
     {
         this.difficolta = difficolta;

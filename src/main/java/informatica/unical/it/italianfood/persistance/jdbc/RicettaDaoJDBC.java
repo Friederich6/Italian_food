@@ -20,7 +20,7 @@ public class RicettaDaoJDBC implements RicettaDao
         if(connection==null || connection.isClosed())
             return false;
 
-        PreparedStatement p=connection.prepareStatement("INSERT INTO ricetta VALUES(DEFAULT,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement p=connection.prepareStatement("INSERT INTO ricetta VALUES(DEFAULT,?,?,?,?,?,?,?,?,?,?,?)");
         p.setString(1,ricetta.getEmailUtente());
         p.setString(2,ricetta.getNomeRicetta());
         p.setString(3,ricetta.getDescrizioneRicetta());
@@ -31,6 +31,7 @@ public class RicettaDaoJDBC implements RicettaDao
         p.setBytes(8,ricetta.getThumbnail());
         p.setString(9,ricetta.getDifficolta());
         p.setString(10,ricetta.getIngredientiRicetta());
+        p.setInt(11,ricetta.getCalorie());
         p.executeUpdate();
         return true;
     }
@@ -46,7 +47,7 @@ public class RicettaDaoJDBC implements RicettaDao
         {
             if(r.getString("nome").toLowerCase().contains(parola.toLowerCase()))
             {
-                ricette.add(new Ricetta(r.getInt("id"),r.getString("email_utente"),r.getString("nome"),r.getString("descrizione"),r.getString("preparazione"),r.getString("data"),r.getString("categoria"),r.getBoolean("segnalata"),r.getBytes("immagine"),r.getString("difficolta"),r.getString("ingredienti")));
+                ricette.add(new Ricetta(r.getInt("id"),r.getString("email_utente"),r.getString("nome"),r.getString("descrizione"),r.getString("preparazione"),r.getString("data"),r.getString("categoria"),r.getBoolean("segnalata"),r.getBytes("immagine"),r.getString("difficolta"),r.getString("ingredienti"),r.getInt("calorie")));
             }
         }
         if(ricette.isEmpty())
@@ -64,7 +65,7 @@ public class RicettaDaoJDBC implements RicettaDao
         Ricetta ricetta;
         if(r.next())
         {
-            ricetta=new Ricetta(r.getInt("id"),r.getString("email_utente"),r.getString("nome"),r.getString("descrizione"),r.getString("preparazione"),r.getString("data"),r.getString("categoria"),r.getBoolean("segnalata"),r.getBytes("immagine"),r.getString("difficolta"),r.getString("ingredienti"));
+            ricetta=new Ricetta(r.getInt("id"),r.getString("email_utente"),r.getString("nome"),r.getString("descrizione"),r.getString("preparazione"),r.getString("data"),r.getString("categoria"),r.getBoolean("segnalata"),r.getBytes("immagine"),r.getString("difficolta"),r.getString("ingredienti"),r.getInt("calorie"));
         }
         else
             return null;

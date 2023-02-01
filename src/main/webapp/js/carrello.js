@@ -9,7 +9,7 @@ function caricaCarrello()
                 var index=0;
                 while(index!==carrello.length)
                 {
-                    $("#articolo_qui").after(creaCarrello(carrello[index++]));
+                    $("#articolo_qui").append(creaCarrello(carrello[index++]));
                 }
             }
         })
@@ -17,7 +17,6 @@ function caricaCarrello()
 let totale=0;
 function creaCarrello(carrello)
 {
-    console.log(0);
     let doc=document.createElement("div");
 
     totale=totale+carrello.prezzo*carrello.quantita;
@@ -32,30 +31,38 @@ function creaCarrello(carrello)
         "                                            <h6 class=\"text-black mb-0\">"+carrello.nomeProdotto+"</h6>\n" +
         "                                        </div>\n" +
         "                                        <div class=\"col-md-3 col-lg-3 col-xl-2 d-flex\">\n" +
-        "                                            <button class=\"btn btn-link px-2\"\n" +
-        "                                                    id='up' onclick=\"this.parentNode.querySelector('input[type=number]').stepDown()\">\n" +
-        "                                                <i class=\"fas fa-minus\"></i>\n" +
-        "                                            </button>\n" +
-        "                                            <input id=\"form1\" min=\"0\" name=\"quantity\" value="+carrello.quantita+" type=\"number\"\n" +
+        "                                            <input readonly value="+carrello.quantita+"\n" +
         "                                                   class=\"form-control form-control-sm\" />\n" +
-        "                                            <button class=\"btn btn-link px-2\"\n" +
-        "                                                    onclick=\"this.parentNode.querySelector('input[type=number]').stepUp()\">\n" +
-        "                                                <i class=\"fas fa-plus\"></i>\n" +
-        "                                            </button>\n" +
-        "                                        </div>\n" +
+        "                                        </div>\n"+
         "                                        <div class=\"col-md-3 col-lg-2 col-xl-2 offset-lg-1\">\n" +
-        "                                            <h6 class=\"mb-0\">&euro;"+carrello.prezzo*carrello.quantita+"</h6>\n" +
+        "                                            <h6 class=\"mb-0\">&euro;"+parseFloat(carrello.prezzo*carrello.quantita).toFixed(2)+"</h6>\n" +
         "                                        </div>\n" +
-        "                                        <div class=\"col-md-1 col-lg-1 col-xl-1 text-end\">\n" +
-        "                                            <a href=\"#!\" class=\"text-muted\"><i class=\"fas fa-times\"></i></a>\n" +
+        "                                        <div class=\"col-md-2 col-lg-2 col-xl-2 text-end\">\n" +
+        "                                            <a> <button onclick=eliminaArticolo("+ '"' + carrello.nomeProdotto + '"' + ")" + " type=\"button\" class=\"btn btn-outline-dark\">Rimuovi</button></a>\n" +
         "                                        </div>\n" +
         "                                    </div>\n" +
         "                                    <hr class=\"my-4\">";
-    document.getElementById("totale").innerText=totale;
+    document.getElementById("totale").innerText=parseFloat(totale).toFixed(2);
     return doc;
 }
 
-function modificaQuantita()
+function svuotaCarrello()
 {
-    console.log(1);
+    $.ajax(
+        {
+            type:"POST",
+            url:"/svuotaCarrello"
+        })
+}
+
+function eliminaArticolo(nome)
+{
+    $.ajax(
+        {
+            type:"POST",
+            url:"/eliminaArticolo",
+            contentType: "application/json",
+            data: JSON.stringify(nome)
+        })
+    window.location.href="/carrello";
 }

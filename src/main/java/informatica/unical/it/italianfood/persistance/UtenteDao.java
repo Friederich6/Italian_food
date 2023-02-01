@@ -1,12 +1,14 @@
 package informatica.unical.it.italianfood.persistance;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import informatica.unical.it.italianfood.model.Utente;
 
 public interface UtenteDao
 {
     public boolean Register(Utente utente) throws SQLException;
-    public boolean Update(Utente utente) throws SQLException;
+    public boolean update(String emailUtente, ArrayList<String> data) throws SQLException;
     public Utente Login(String email,String password) throws SQLException;
     public boolean CheckByEmail(String email)throws SQLException;
     public boolean CheckByGoogleId(String id) throws  SQLException;

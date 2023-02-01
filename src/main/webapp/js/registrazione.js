@@ -45,7 +45,7 @@ function iscriviUtente() {
     }
     else{
         document.getElementById("registerbtn").className="btn btn-primary btn-lg";
-        var utente = new Utente(email, password, nome, cognome, "0");
+        var utente = new Utente(email, password, nome, cognome, null);
         $.ajax(
             {
                 url: "/doRegister",

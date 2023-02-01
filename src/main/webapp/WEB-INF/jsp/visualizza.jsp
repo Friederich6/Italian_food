@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Jumbotron example · Bootstrap v5.3</title>
+    <title>Italian Food</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/jumbotron/">
 
@@ -98,6 +98,7 @@
                 <h1 id="nomeRicetta" class="display-5 fw-bold"></h1>
                 <p id="categoria" class="col-md-8 fw-bold"></p>
                 <p id="difficolta" class="col-md-8 fw-bold"></p>
+                <p id="calorie" class="col-md-8 fw-bold"></p>
                 <p id="descrizioneRicetta" class="col-md-8 fs-4"></p>
             </div>
         </div>

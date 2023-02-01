@@ -10,4 +10,7 @@ public interface CarrelloDao
 {
     public boolean inserisciNelCarrello(String email,String nomeProdotto) throws SQLException;
     public ArrayList<Carrello> prelevaCarrello(String emailUtente)throws  SQLException;
+    public void svuotaCarrello(String emailUtente)throws SQLException;
+    public void eliminaArticolo(String nomeProdotto,String emailUtente) throws  SQLException;
+
 }

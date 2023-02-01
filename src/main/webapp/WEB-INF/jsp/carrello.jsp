@@ -27,15 +27,15 @@
                     <div class="card-body p-0">
                         <div class="row g-0">
                             <div class="col-lg-8">
+                                <a href="/shop">
+                                    <button style="border-top-left-radius: 16px" type="button" class="btn btn-outline-primary">Negozio</button>
+                                </a>
                                 <div class="p-5">
-                                    <div id="articolo_qui" class="d-flex justify-content-between align-items-center mb-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-5">
                                         <h1 class="fw-bold mb-0 text-black">Carrello</h1>
                                         <h6 class="mb-0 text-muted"></h6>
                                     </div>
-
-                                    <div class="pt-5">
-                                        <h6 class="mb-0"><a href="#!" class="text-body"><i
-                                                class="fas fa-long-arrow-alt-left me-2"></i>Home</a></h6>
+                                    <div id="articolo_qui">
                                     </div>
                                 </div>
                             </div>
@@ -49,23 +49,65 @@
                                     <h5 class="text-uppercase mb-3">Indirizzo di consegna</h5>
 
                                     <div class="mb-4 pb-2">
-                                        <select class="select">
-                                            <option value="1">Standard-Delivery- €5.00</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                            <option value="4">Four</option>
-                                        </select>
+                                        <label>Indirizzo registrato su PayPal</label>
                                     </div>
-
+                                    <h5 class="text-uppercase mb-3">Spedizione</h5>
+                                    <div class="mb-4 pb-2">
+                                        <label>Consegna gratis 2/3 giorni lavorativi €0.00</label>
+                                    </div>
 
                                     <hr class="my-4">
                                     <div class="d-flex justify-content-between mb-5">
-                                        <h5 class="text-uppercase">Prezzo totale</h5>
+                                        <h5 class="text-uppercase">Prezzo totale €</h5>
                                         <h5 id="totale"></h5>
                                     </div>
-                                    <button type="button" class="btn btn-dark btn-block btn-lg"
-                                            data-mdb-ripple-color="dark">Acquista</button>
-                                </div>
+                                    <div id="smart-button-container">
+                                        <div style="text-align: center;">
+                                            <div id="paypal-button-container"></div>
+                                        </div>
+                                    </div>
+                                    <script src="https://www.paypal.com/sdk/js?client-id=AX061oyRlmStCkYrzw7G8r_X-gVBxw1ru1hTDSPJ0M0ON7RIWlE-9-NaAbHV460IrCsDHW4oCsX669F9&currency=EUR" data-sdk-integration-source="button-factory"></script>
+                                    <script>
+                                        function initPayPalButton() {
+                                            paypal.Buttons({
+                                                style: {
+                                                    shape: 'pill',
+                                                    color: 'blue',
+                                                    layout: 'horizontal',
+                                                    label: 'paypal',
+                                                },
+
+                                                createOrder: function(data, actions) {
+                                                    return actions.order.create({
+                                                        purchase_units: [{"amount":{"currency_code":"EUR","value":document.getElementById("totale").innerText}}]
+                                                    });
+                                                },
+
+                                                onApprove: function(data, actions) {
+                                                    return actions.order.capture().then(function(orderData) {
+
+                                                        // Full available details
+                                                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                                        // Show a success message within this page, e.g.
+                                                        const element = document.getElementById('paypal-button-container');
+                                                        svuotaCarrello();
+                                                        $("#articolo_qui").innerHTML=" ";
+                                                        element.innerHTML = '';
+                                                        element.innerHTML = '<h3>Grazie per aver acquistato da noi!</h3>';
+                                                        setTimeout(function ()
+                                                        {
+                                                            window.location.href="/carrello";
+                                                        }, 2000);
+                                                    });
+                                                },
+
+                                                onError: function(err) {
+                                                    console.log(err);
+                                                }
+                                            }).render('#paypal-button-container');
+                                        }
+                                        initPayPalButton();
+                                    </script>
                             </div>
                         </div>
                     </div>

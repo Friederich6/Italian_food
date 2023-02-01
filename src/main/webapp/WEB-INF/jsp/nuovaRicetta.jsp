@@ -31,7 +31,7 @@
                 <div>
                     <input type="text" id="emailRicetta" hidden class="form-control" placeholder=${utente.email}>
                     <label class="form-label" for="nomeRicetta">Nome ricetta</label>
-                    <input type="text" id="nomeRicetta" class="form-control" />
+                    <input type="text" id="nomeRicetta" class="form-control"/>
                 </div>
                 <div class="form-outline">
                     <label class="form-label" for="descrizioneRicetta">Descrizione ricetta</label>
@@ -44,6 +44,10 @@
                 <div class="form-outline">
                     <label class="form-label" for="ingredientiRicetta">Inserisci gli ingredienti che hai usato e le loro quantità</label>
                     <textarea class="form-control" id="ingredientiRicetta" rows="4"></textarea>
+                </div>
+                <div>
+                    <label class="form-label" for="calorie">Calorie</label>
+                    <input type="number" id="calorie" class="form-control"/>
                 </div>
                 <div class="comb0">
                     <select id="difficolta"class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" style="border-radius: 10px;border-color: #bbbbbb;">
