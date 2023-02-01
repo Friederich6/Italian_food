@@ -53,10 +53,14 @@
                     <div class="form-group">
                         <label for="account-email">Nuova E-mail</label>
                         <c:if test="${utente.email!=null}">
-                        <input class="form-control" type="email" id="account-email" placeholder="${utente.email}" required="">
+                            <c:if test="${utente.google_id!=0}">
+                                <input disabled class="form-control" type="text" id="account-email" placeholder=${utente.email} required="">
+                            </c:if>
                         </c:if>
-                        <c:if test="${utente.email==null}">
-                        <input class="form-control" type="text" id="account-fn" placeholder="Email" required="">
+                        <c:if test="${utente.email!=null}">
+                            <c:if test="${utente.google_id==0}">
+                                <input class="form-control" type="text" id="account-email" placeholder=${utente.email} required="">
+                            </c:if>
                         </c:if>
                     </div>
                 </div>
