@@ -1,4 +1,4 @@
-<footer class="row p-4 mt-5 bg-light border-top">
+<footer style="bottom: 0" class="row p-4 mt-5 bg-light border-top">
     <p class="col-md-4 fs-5 d-flex justify-content-center align-items-center mb-2 mt-2">&copy 2023 Italian Food</p>
     <p class="col-md-4 fs-5 d-flex justify-content-center align-items-center mb-2 mt-2">
         <i class="icon bi bi-geo-alt-fill me-2" style="font-size: 1.5rem"></i>
