@@ -45,6 +45,9 @@ public class Utente implements java.io.Serializable{
     public String getGoogle_id() {
         return google_id;
     }
+    public void setGoogle_id(String google_id) {
+        this.google_id=google_id;
+    }
 
     public boolean isBannato() {
         return bannato;

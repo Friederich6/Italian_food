@@ -110,6 +110,7 @@ public class UtenteDaoJDBC implements UtenteDao
                 utente.setEmail(r.getString("email"));
                 utente.setBannato(r.getBoolean("bannato"));
                 utente.setAdmin(r.getBoolean("admin"));
+                utente.setGoogle_id(r.getString("google_id"));
                 return utente;
         }
         p.close();

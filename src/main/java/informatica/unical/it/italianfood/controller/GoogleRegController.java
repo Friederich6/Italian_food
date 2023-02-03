@@ -24,6 +24,7 @@ public class GoogleRegController
         if(DatabaseJDBC.getInstance().getUtenteDao().CheckByGoogleId(id))
         {
             Utente utente=DatabaseJDBC.getInstance().getUtenteDao().GoogleLogin(id);
+            System.out.println(utente.getGoogle_id());
             HttpSession session = req.getSession(true);
             session.setAttribute("utente", utente);
             res.setStatus(HttpServletResponse.SC_OK);

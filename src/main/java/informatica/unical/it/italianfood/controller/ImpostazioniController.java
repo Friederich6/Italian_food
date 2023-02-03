@@ -3,6 +3,7 @@ package informatica.unical.it.italianfood.controller;
 import informatica.unical.it.italianfood.model.Utente;
 import informatica.unical.it.italianfood.persistance.jdbc.DatabaseJDBC;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
