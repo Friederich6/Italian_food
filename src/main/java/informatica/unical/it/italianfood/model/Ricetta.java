@@ -11,11 +11,11 @@ public class Ricetta implements java.io.Serializable
     private String dataPubblicazione="";
     private String categoria="";
     private boolean segnalata=false;
-    private byte[] thumbnail=null;
+    private String thumbnail=null;
     private String difficolta="";
     private int calorie=0;
 
-    public Ricetta(int id,String emailUtente,String nomeRicetta,String descrizioneRicetta,String preparazioneRicetta,String dataPubblicazione,String categoria,boolean segnalata,byte[]thumbnail,String difficolta,String ingredientiRicetta,int calorie)
+    public Ricetta(int id,String emailUtente,String nomeRicetta,String descrizioneRicetta,String preparazioneRicetta,String dataPubblicazione,String categoria,boolean segnalata,String thumbnail,String difficolta,String ingredientiRicetta,int calorie)
     {
         this.id=id;
         this.emailUtente=emailUtente;
@@ -103,11 +103,11 @@ public class Ricetta implements java.io.Serializable
     {
         this.segnalata = segnalata;
     }
-    public byte[] getThumbnail()
+    public String getThumbnail()
     {
         return thumbnail;
     }
-    public void setThumbnail(byte[] thumbnail)
+    public void setThumbnail(String thumbnail)
     {
         this.thumbnail = thumbnail;
     }

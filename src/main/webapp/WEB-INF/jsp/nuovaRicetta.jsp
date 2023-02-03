@@ -69,13 +69,13 @@
                 </div>
                 <div style="margin-top: 40px;">
                     <div class="mb-4 d-flex justify-content-center">
-                        <img src="image/upload.png" id="immagineUpload"
+                        <img id="showImage" src="image/upload.png"
                              alt="example placeholder" style="width: 150px;" />
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="btn btn-primary btn-rounded" >
-                            <label class="form-label text-white m-1" for="immagine">Scegli un immagine</label>
-                            <input type="file" class="form-control d-none" id="immagine"/>
+                            <label class="form-label text-white m-1" for="selezionaImmagine">Scegli un immagine</label>
+                            <input type="file" class="form-control d-none" id="selezionaImmagine" onchange="getBase64()"/>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">

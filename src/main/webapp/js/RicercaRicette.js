@@ -24,7 +24,7 @@ function creaRicetta(ricetta)
     var section=document.createElement("section");
 
     section.innerHTML="<section style='background-color: #F8F9FA;margin-top: 10px' class=\"search-result-item\">\n" +
-        "            <a class=\"image-link\" href=\"#\"><img class=\"image\" src=\"image/dummy.jpg\">\n" +
+        "            <a class=\"image-link\" href=\"#\"><img class=\"image\" src="+ricetta.thumbnail+">\n" +
         "            </a>\n" +
         "            <div  class=\"search-result-item-body\">\n" +
         "                <div class=\"row\">\n" +
