@@ -44,7 +44,7 @@ function creaCard(ricetta)
         "            <img style='height: 550px;' src='"+ricetta.thumbnail+"' class=\"card-img-top\" alt=\"...\">\n" +
         "            <div class=\"card-body\">\n" +
         "                <p class=\"card-text\">"+ricetta.nomeRicetta+"</p>\n" +
-        "                <a href='http://localhost:8081/visualizza?id="+ricetta.id+"' class=\"btn btn-primary\">Apri</a>\n" +
+        "                <a href='http://localhost:8081/visualizza?id="+ricetta.id+"' class=\"btn btn-outline-dark\">Apri</a>\n" +
         "            </div>\n" +
         "        </div>\n" +
         "    </div>";
