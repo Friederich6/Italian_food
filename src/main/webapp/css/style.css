@@ -482,14 +482,6 @@ body{
     }
 }
 
-
-.carousel-item{
-    margin-top: 20px;
-    background-color: #e7e7e7;
-}
-.card-img-top{
-    height: 250px;
-}
 .style_title{
     font-family: Algerian;
     margin-top: 20px;
@@ -524,6 +516,7 @@ body{
     border-radius: 30px;
     margin-right: 20px
 }
+
 
 
 
