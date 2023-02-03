@@ -13,6 +13,7 @@ function visualizzaRicetta()
             {
                 document.getElementById("nomeRicetta").innerText=ricetta.nomeRicetta;
                 document.getElementById("descrizioneRicetta").innerText=ricetta.descrizioneRicetta;
+                document.getElementById("imgRicetta").src=ricetta.thumbnail;
                 document.getElementById("ingredientiRicetta").innerText=ricetta.ingredientiRicetta;
                 document.getElementById("preparazioneRicetta").innerText=ricetta.preparazioneRicetta;
                 document.getElementById("categoria").innerText="Categoria:"+ricetta.categoria;

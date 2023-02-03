@@ -95,6 +95,7 @@
     <div class="container py-4">
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
+                <img  id="imgRicetta" style="float: right;border-radius: 20px;height: auto;width:100%;max-width: 400px" src="">
                 <h1 id="nomeRicetta" class="display-5 fw-bold"></h1>
                 <p id="categoria" class="col-md-8 fw-bold"></p>
                 <p id="difficolta" class="col-md-8 fw-bold"></p>
