@@ -8,18 +8,21 @@
     <title>Italian Food</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
-<body>
+<body onload="loadRecipes()">
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/home.js" > </script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
 <jsp:include page="modal.jsp"/>
 
 <jsp:include page="menuBar.jsp"/>
@@ -54,16 +57,36 @@
     </div>
 </div>
 
-<div>
-    <picture>
-        <div class="sfondo">
-            <img src="image/gourmet.jpg" style="border-radius: 16px" width="80%">
-            <h2 >Ricette di stagione</h2>
-            <p > Sorprendi la tua metà con i muffin di San Valentino</p>
+<h3 id="antipasti" class="style_title">I nostri antipasti</h3>
 
-        </div>
-    </picture>
+<div id="antipastiQua" class="grid-container">
+
 </div>
+
+<h3 id="primi" class="style_title">I nostri primi</h3>
+
+<div id="primiQua" class="grid-container">
+
+</div>
+
+<h3 id="secondi" class="style_title">I nostri secondi</h3>
+
+<div id="secondiQua" class="grid-container">
+
+</div>
+
+<h3 id="contorni" class="style_title">I nostri contorni</h3>
+
+<div id="contorniQua" class="grid-container">
+
+</div>
+
+<h3 id="dolci" class="style_title">I nostri dolci</h3>
+
+<div id="dolciQua" class="grid-container">
+
+</div>
+
 </body>
 <footer>
     <jsp:include page="footer.jsp"/>
