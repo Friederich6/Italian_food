@@ -84,12 +84,10 @@
         <i class="fas fa-shopping-cart"></i>
       </a>
 
-      <div class="input-group padding_ricerca" >
+      <div id="ricerca" class="input-group padding_ricerca" >
         <input id="parolaDaCercare" type="search" class="form-control rounded" placeholder="Cerca" aria-label="search" aria-describedby="search-addon"/>
           <button id="cerca" onclick="ricerca()" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Cerca</button>
-
       </div>
-
       <div>
         <c:if test="${utente.nome!=null}">
           <label>${utente.nome} ${utente.cognome}</label>

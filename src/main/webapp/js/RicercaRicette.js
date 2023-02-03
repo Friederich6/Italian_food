@@ -1,6 +1,13 @@
-
+window.addEventListener("load",function ()
+{
+    if(window.location.href!=="http://localhost:8081/")
+    {
+        $("#ricerca").hide();
+    }
+})
     function ricerca()
     {
+
         var parola = document.getElementById("parolaDaCercare").value;
             $.ajax(
                 {
